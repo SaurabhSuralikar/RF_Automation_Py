@@ -1,4 +1,4 @@
-**** Settings ***
+*** Settings ***
 Library    SeleniumLibrary
 Resource  ../Resources/UserKeywords.robot
 Resource   ../Resources/LoginKeywords.robot
@@ -20,13 +20,14 @@ Tc_001_Login Logout Functionality
     #Click Loginin
     ${row}=  Read Number Of Rows  Sheet1
     #FOR ${i} IN RANGE 1  ${row}
-    FOR   ${i}    IN RANGE    1   ${row}+1
+    FOR     ${i}    IN RANGE    1   ${row}+1
 
         ${username}=  Read Excel Cell data  Sheet1  ${i}  1
         ${password}=  Read Excel Cell data  Sheet1  ${i}  2
         Enter UserName  ${username}
         Enter Password  ${password}
         Click Submit
+
         #click button  xpath://button[@type='submit']
         Sleep  5 seconds
         log to console  ${i}
