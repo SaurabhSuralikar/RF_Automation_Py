@@ -21,7 +21,7 @@ Tc_001_Login Logout Functionality
     ${row}=  Read Number Of Rows  Sheet1
     #FOR ${i} IN RANGE 1  ${row}
     
-    FOR    ${i}    IN RANGE    1  ${row}+1
+    FOR  ${i}    IN RANGE    1  ${row}+1
 
         ${username}=  Read Excel Cell data  Sheet1  ${i}  1
         ${password}=  Read Excel Cell data  Sheet1  ${i}  2
