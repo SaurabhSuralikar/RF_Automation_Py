@@ -12,17 +12,11 @@ ${URL}      https://www.testyou.in/Login.aspx
 *** Test Cases ***
 
 Tc_001_Login Logout Functionality
-#    Open Browser    ${URL}  Chrome
-#    Maximize Browser Window
-#    Sleep  2 seconds
-#    Click element  xpath://a[text()='Login']
-    Open My Browser  ${URL}  Chrome
-    #Click Loginin
-    ${row}=  Read Number Of Rows  Sheet1
-    #FOR ${i} IN RANGE 1  ${row}
-    
-    FOR  ${i}    IN RANGE    1  ${row}+1
 
+    Open My Browser  ${URL}  Chrome
+
+    ${row}=  Read Number Of Rows  Sheet1
+    FOR     ${i}    IN RANGE    1  ${row}+1
         ${username}=  Read Excel Cell data  Sheet1  ${i}  1
         ${password}=  Read Excel Cell data  Sheet1  ${i}  2
         Enter UserName  ${username}
